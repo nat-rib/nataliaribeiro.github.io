@@ -47,13 +47,27 @@ jobs:
       - name: Link Tests
         run: |
           echo "🔗 Testing page links..."
-          hugo server --port 1314 --baseURL http://localhost:1314/ &
-          sleep 5
+          hugo server --port 1314 --baseURL http://localhost:1314/nataliaribeiro.github.io/ &
+          sleep 8
           
-          PAGES=("/" "/about/" "/experience/" "/projects/" "/posts/" "/contact/")
+          # Test EN pages
+          PAGES=("/nataliaribeiro.github.io/" "/nataliaribeiro.github.io/about/" "/nataliaribeiro.github.io/experience/" "/nataliaribeiro.github.io/projects/" "/nataliaribeiro.github.io/posts/" "/nataliaribeiro.github.io/contact/")
+          # Test PT pages
+          PT_PAGES=("/nataliaribeiro.github.io/pt/" "/nataliaribeiro.github.io/pt/about/" "/nataliaribeiro.github.io/pt/experience/" "/nataliaribeiro.github.io/pt/projects/" "/nataliaribeiro.github.io/pt/posts/" "/nataliaribeiro.github.io/pt/contact/")
+          
           ALL_OK=true
           
           for page in "${PAGES[@]}"; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:1314$page")
+            if [ "$STATUS" = "200" ]; then
+              echo "✅ $page -> $STATUS"
+            else
+              echo "❌ $page -> $STATUS"
+              ALL_OK=false
+            fi
+          done
+          
+          for page in "${PT_PAGES[@]}"; do
             STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:1314$page")
             if [ "$STATUS" = "200" ]; then
               echo "✅ $page -> $STATUS"
