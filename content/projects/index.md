@@ -5,11 +5,7 @@ date: 2024-01-01
 draft: false
 hidemeta: true
 ShowToc: false
-showBreadCrumbs: true
----
-
-A selection of projects I've worked on throughout my career.
-
+showBreadCrumbs: false
 ---
 
 ## 🏦 Trading Management System
