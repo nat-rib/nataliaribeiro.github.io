@@ -1,6 +1,6 @@
 /* ===================================
    Natalia Ribeiro Portfolio
-   Clean & Simple
+   With Mobile Hamburger Menu
    =================================== */
 
 :root {
@@ -27,44 +27,132 @@
 }
 
 /* ===================================
-   HEADER - Simple horizontal scroll
+   HEADER
    =================================== */
 
 .header {
   position: sticky;
   top: 0;
   background: var(--theme);
+  border-bottom: 1px solid var(--border);
   z-index: 999;
 }
 
 .nav {
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 0.75rem 1rem;
-}
-
-/* Menu - horizontal scrollable on mobile */
-#menu {
   display: flex;
-  gap: 0.25rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-#menu::-webkit-scrollbar {
+.logo a {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-switches {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* ===================================
+   HAMBURGER MENU (CSS Only)
+   =================================== */
+
+.menu-checkbox {
   display: none;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Menu - Desktop */
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+}
+
 #menu li a {
-  white-space: nowrap;
+  display: block;
   padding: 0.5rem 0.75rem;
+  color: var(--secondary);
   font-size: 0.9rem;
   border-radius: var(--radius);
+  transition: color 0.2s;
 }
 
 #menu li a:hover,
 #menu li a span.active {
   color: var(--accent);
-  background: var(--tertiary);
+}
+
+/* ===================================
+   MOBILE MENU (< 640px)
+   =================================== */
+
+@media (max-width: 640px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  #menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  #menu li a {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+  
+  /* Show menu when checkbox is checked */
+  .menu-checkbox:checked ~ #menu {
+    display: flex;
+  }
+  
+  /* Animate hamburger to X */
+  .menu-checkbox:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-checkbox:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }
 
 /* ===================================

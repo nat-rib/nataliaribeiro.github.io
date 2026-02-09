@@ -1,0 +1,31 @@
+#!/bin/bash
+# Pre-commit hook: Run QA tests before allowing commit
+
+echo "🧪 Running pre-commit QA tests..."
+
+# Check if Hugo is installed
+if ! command -v hugo &> /dev/null; then
+    echo "⚠️  Hugo not installed, skipping local tests"
+    exit 0
+fi
+
+# Run build test
+echo "📦 Testing build..."
+if ! hugo --minify --quiet 2>/dev/null; then
+    echo "❌ Build failed! Fix errors before committing."
+    exit 1
+fi
+
+echo "✅ Build OK"
+
+# Optional: Run full QA if script exists
+if [ -f "scripts/qa-test.sh" ]; then
+    echo "🔗 Running full QA suite..."
+    if ! ./scripts/qa-test.sh; then
+        echo "❌ QA tests failed! Fix before committing."
+        exit 1
+    fi
+fi
+
+echo "✅ Pre-commit checks passed!"
+exit 0
