@@ -1,5 +1,5 @@
 baseURL: "https://nat-rib.github.io/nataliaribeiro.github.io/"
-languageCode: "en-us"
+languageCode: "pt-br"
 title: "Natalia Ribeiro"
 theme: "PaperMod"
 
@@ -8,6 +8,10 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+# Important for GitHub Pages subpath
+canonifyURLs: true
+relativeURLs: false
+
 minify:
   disableXML: true
   minifyOutput: true
@@ -15,8 +19,8 @@ minify:
 params:
   env: production
   title: "Natalia Ribeiro"
-  description: "Data Engineer | Backend Developer"
-  keywords: [Data Engineer, Backend, Python, AWS, Portfolio]
+  description: "Data Engineer | Backend Developer | Building scalable data solutions"
+  keywords: [Data Engineer, Backend Developer, Python, AWS, Portfolio, Natalia Ribeiro]
   author: "Natalia Ribeiro"
   
   defaultTheme: auto
@@ -39,7 +43,7 @@ params:
   tocopen: false
   
   assets:
-    favicon: "/favicon.ico"
+    disableFingerprinting: false
     
   label:
     text: "Natalia Ribeiro"
@@ -49,20 +53,23 @@ params:
   profileMode:
     enabled: true
     title: "Natalia Ribeiro"
-    subtitle: "Data Engineer passionate about data and willing to help"
+    subtitle: |
+      **Data Engineer** passionate about building scalable data solutions.
+      
+      6+ years in tech • Itaú Unibanco • XP Inc.
     imageUrl: "/images/avatar.jpg"
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 140
+    imageHeight: 140
     imageTitle: "Natalia Ribeiro"
     buttons:
-      - name: About
-        url: /about/
-      - name: Experience
-        url: /experience/
-      - name: Blog
-        url: /posts/
-      - name: Contact
-        url: /contact/
+      - name: "👩‍💻 About"
+        url: "/about/"
+      - name: "💼 Experience"
+        url: "/experience/"
+      - name: "📝 Blog"
+        url: "/posts/"
+      - name: "📬 Contact"
+        url: "/contact/"
 
   socialIcons:
     - name: linkedin
@@ -71,11 +78,17 @@ params:
       url: "https://github.com/nat-rib"
     - name: dev
       url: "https://dev.to/nat_rib"
+    - name: email
+      url: "mailto:contact@example.com"
 
   cover:
     hidden: false
     hiddenInList: false
     hiddenInSingle: false
+    responsiveImages: true
+
+  editPost:
+    disabled: true
 
   fuseOpts:
     isCaseSensitive: false
@@ -115,7 +128,16 @@ outputs:
     - RSS
     - JSON
 
+taxonomies:
+  category: categories
+  tag: tags
+
 markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
