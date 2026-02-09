@@ -4,128 +4,190 @@ description: "My professional journey in tech"
 date: 2024-01-01
 draft: false
 hidemeta: true
-ShowToc: true
-TocOpen: true
-showBreadCrumbs: true
+ShowToc: false
+showBreadCrumbs: false
 ---
 
-Over 6 years building scalable systems in Brazil's largest financial institutions.
+<style>
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 
----
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
 
-## 🏦 Itaú Unibanco
+@media (min-width: 768px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
-### Senior Data/Software Engineer
-**May 2022 — Present** | São Paulo, Brazil
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
 
-Leading the development of a **trading management system** from the ground up. Responsible for architecture decisions and end-to-end implementation.
+@media (min-width: 768px) {
+  .timeline-item {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 40px;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    margin-left: 0;
+    text-align: right;
+  }
+  
+  .timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: 40px;
+    padding-right: 0;
+    text-align: left;
+  }
+}
 
-**Key Achievement:**
-> Reduced desk management time by **70%** while significantly increasing process reliability.
+.timeline-dot {
+  position: absolute;
+  left: 12px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 3px solid var(--theme);
+}
 
-**Responsibilities:**
-- Designing and implementing data pipelines for trading desk operations
-- Processing and calculating trading values with high accuracy
-- Building automated reporting and monitoring systems
-- Collaborating with trading desk teams to understand requirements
+@media (min-width: 768px) {
+  .timeline-item:nth-child(odd) .timeline-dot {
+    right: -9px;
+    left: auto;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: -9px;
+  }
+}
 
-**Tech Stack:** `Python` `AWS Lambda` `SQL` `S3`
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
 
----
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: var(--primary);
+}
 
-### Software Engineer
-**Nov 2020 — Feb 2021** | São Paulo, Brazil
+.timeline-company {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
 
-Designed and developed a microservice for more accurate **credit analysis calculations**.
+.timeline-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--secondary);
+}
 
-**Responsibilities:**
-- Building credit scoring microservices
-- Integrating with existing banking systems
-- Ensuring compliance with financial regulations
+.timeline-tech {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
 
-**Tech Stack:** `.NET Core` `AWS Lambda` `MongoDB`
+.timeline-tech code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+</style>
 
----
+<div class="timeline">
 
-### Junior Software Engineer
-**Oct 2018 — Nov 2020** | São Paulo, Brazil
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2022 — Present</div>
+<div class="timeline-title">Sr. Data/Software Engineer</div>
+<div class="timeline-company">🏦 Itaú Unibanco</div>
+<div class="timeline-desc">
+Leading development of trading management system. Reduced desk management time by 70%.
+</div>
+<div class="timeline-tech"><code>Python</code> <code>AWS</code> <code>SQL</code></div>
+</div>
 
-Modernized legacy systems by designing and developing replacement services.
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2021 — 2022</div>
+<div class="timeline-title">Software Engineer</div>
+<div class="timeline-company">💼 XP Inc.</div>
+<div class="timeline-desc">
+High-availability microservices for Brazil's largest investment platform. Event-driven architecture at scale.
+</div>
+<div class="timeline-tech"><code>.NET Core</code> <code>Redis</code> <code>Azure</code></div>
+</div>
 
-**Key Achievement:**
-> Reduced calculation time by **60%** through implementing smart caching and parallelism strategies.
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2020 — 2021</div>
+<div class="timeline-title">Software Engineer</div>
+<div class="timeline-company">🏦 Itaú Unibanco</div>
+<div class="timeline-desc">
+Credit analysis microservices. Ensured compliance with financial regulations.
+</div>
+<div class="timeline-tech"><code>.NET Core</code> <code>MongoDB</code> <code>AWS Lambda</code></div>
+</div>
 
-**Responsibilities:**
-- Analyzing and understanding legacy system behavior
-- Designing modern replacement architecture
-- Implementing performance optimizations
-- Writing comprehensive documentation
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2018 — 2020</div>
+<div class="timeline-title">Jr. Software Engineer</div>
+<div class="timeline-company">🏦 Itaú Unibanco</div>
+<div class="timeline-desc">
+Modernized legacy systems. Reduced calculation time by 60% through caching and parallelism.
+</div>
+<div class="timeline-tech"><code>C#</code> <code>.NET</code> <code>SQL Server</code></div>
+</div>
 
-**Tech Stack:** `C# (.NET Framework)` `SQL Server`
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2017 — 2018</div>
+<div class="timeline-title">Developer Intern</div>
+<div class="timeline-company">🏦 Itaú Unibanco</div>
+<div class="timeline-desc">
+First professional experience. Enterprise development practices and banking domain.
+</div>
+<div class="timeline-tech"><code>C#</code> <code>SQL Server</code></div>
+</div>
 
----
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2017</div>
+<div class="timeline-title">BI Analyst Intern</div>
+<div class="timeline-company">🚗 General Motors</div>
+<div class="timeline-desc">
+Business intelligence dashboards and reports. Built automation solutions with Power BI and Excel.
+</div>
+<div class="timeline-tech"><code>Power BI</code> <code>Excel</code> <code>VBA</code></div>
+</div>
 
-### Software Developer Intern
-**Dec 2017 — Oct 2018** | São Paulo, Brazil
-
-First professional experience in software development. Learned enterprise development practices and banking domain knowledge.
-
-**Tech Stack:** `C# (.NET Framework)` `SQL Server`
-
----
-
-## 💼 XP Inc.
-
-### Software Engineer
-**Mar 2021 — May 2022** | São Paulo, Brazil
-
-Implemented new features on mobile app and web portal affecting the **entire customer base** of one of Brazil's largest investment platforms.
-
-**Responsibilities:**
-- Developing high-availability microservices
-- Working with event-driven architecture
-- Integrating multiple systems and data sources
-- Participating in agile ceremonies and code reviews
-
-**Tech Stack:** `.NET Core` `Redis` `MongoDB` `Event Hub` `RabbitMQ` `Azure Functions`
-
----
-
-## 🚗 General Motors
-
-### BI Analyst Intern
-**Jan 2017 — Dec 2017** | São Caetano do Sul, Brazil
-
-Created business intelligence dashboards and reports for operational teams.
-
-**Achievements:**
-- Built interactive Power BI dashboards
-- Developed Excel automation solutions
-- Improved English proficiency in international environment
-
-**Tech Stack:** `Power BI` `Excel` `VBA`
-
----
-
-## 📊 Career Summary
-
-| Year | Role | Company | Focus |
-|------|------|---------|-------|
-| 2022+ | Sr. Data/Software Engineer | Itaú | Data Pipelines |
-| 2021-22 | Software Engineer | XP Inc. | Microservices |
-| 2020-21 | Software Engineer | Itaú | Credit Analysis |
-| 2018-20 | Jr. Software Engineer | Itaú | Legacy Modernization |
-| 2017-18 | Developer Intern | Itaú | Backend Development |
-| 2017 | BI Analyst Intern | GM | Business Intelligence |
-
----
-
-## 🎯 What I'm Looking For
-
-I'm focused on opportunities in **Data Engineering** where I can:
-- Build scalable data pipelines and ETL processes
-- Work with modern data stack (Spark, Airflow, dbt)
-- Solve complex data challenges
-- Continue learning and growing
-
-**Interested in collaborating?** [Let's connect!](/contact/)
+</div>

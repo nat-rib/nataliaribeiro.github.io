@@ -19,26 +19,26 @@ minify:
 params:
   env: production
   title: "Natalia Ribeiro"
-  description: "Data Engineer | Backend Developer | Building scalable data solutions"
-  keywords: [Data Engineer, Backend Developer, Python, AWS, Portfolio, Natalia Ribeiro]
+  description: "Software Engineer | AI-Augmented Development | Financial Systems"
+  keywords: [Software Engineer, AI Agents, Python, AWS, Portfolio, Natalia Ribeiro, LLM, Financial Systems]
   author: "Natalia Ribeiro"
   
   defaultTheme: auto
   disableThemeToggle: false
   
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
-  ShowBreadCrumbs: true
+  ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
   ShowWordCount: false
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: false
   hidemeta: false
-  hideSummary: false
+  hideSummary: true
   showtoc: true
   tocopen: false
   
@@ -54,32 +54,21 @@ params:
     enabled: true
     title: "Natalia Ribeiro"
     subtitle: |
-      **Data Engineer** passionate about building scalable data solutions.
+      Software engineer specializing in **AI-augmented development** and **financial systems**.
       
-      6+ years in tech • Itaú Unibanco • XP Inc.
+      I use AI agents as a junior dev that never sleeps—writing boilerplate, reviewing PRs, and flagging issues before I see them.
+      
+      6+ years shipping high-stakes backend systems in banking. Now focused on making AI agents actually useful for coding.
     imageUrl: "/nataliaribeiro.github.io/images/avatar.jpg"
     imageWidth: 140
     imageHeight: 140
     imageTitle: "Natalia Ribeiro"
-    buttons:
-      - name: "👩‍💻 About"
-        url: "/about/"
-      - name: "💼 Experience"
-        url: "/experience/"
-      - name: "📝 Blog"
-        url: "/posts/"
-      - name: "📬 Contact"
-        url: "/contact/"
 
   socialIcons:
     - name: linkedin
       url: "https://www.linkedin.com/in/natirib1195/"
     - name: github
       url: "https://github.com/nat-rib"
-    - name: dev
-      url: "https://dev.to/nat_rib"
-    - name: email
-      url: "mailto:contact@example.com"
 
   cover:
     hidden: false
