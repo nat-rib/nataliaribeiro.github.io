@@ -149,15 +149,22 @@
 
 #menu li {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 #menu li a {
   display: block;
-  padding: 1rem 0;
+  padding: 1rem 0 1rem 1rem;
   color: var(--secondary);
   font-size: 1.1rem;
   border-bottom: 1px solid var(--border);
   transition: color 0.2s;
+}
+
+#menu li a span {
+  display: inline-block;
 }
 
 #menu li a:hover,
