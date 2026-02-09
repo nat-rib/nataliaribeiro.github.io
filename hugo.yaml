@@ -1,0 +1,121 @@
+baseURL: "https://nat-rib.github.io/nataliaribeiro.github.io/"
+languageCode: "en-us"
+title: "Natalia Ribeiro"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Natalia Ribeiro"
+  description: "Data Engineer | Backend Developer"
+  keywords: [Data Engineer, Backend, Python, AWS, Portfolio]
+  author: "Natalia Ribeiro"
+  
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+  
+  assets:
+    favicon: "/favicon.ico"
+    
+  label:
+    text: "Natalia Ribeiro"
+    icon: "/images/avatar.jpg"
+    iconHeight: 35
+    
+  profileMode:
+    enabled: true
+    title: "Natalia Ribeiro"
+    subtitle: "Data Engineer passionate about data and willing to help"
+    imageUrl: "/images/avatar.jpg"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: "Natalia Ribeiro"
+    buttons:
+      - name: About
+        url: /about/
+      - name: Experience
+        url: /experience/
+      - name: Blog
+        url: /posts/
+      - name: Contact
+        url: /contact/
+
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/natirib1195/"
+    - name: github
+      url: "https://github.com/nat-rib"
+    - name: dev
+      url: "https://dev.to/nat_rib"
+
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: experience
+      name: Experience
+      url: /experience/
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 40
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 50
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
