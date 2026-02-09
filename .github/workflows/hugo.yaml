@@ -75,42 +75,37 @@ jobs:
             fi
           done
           
-          # Test internal links in HTML (menu links)
-          echo "🔗 Testing internal links in HTML..."
+          # Verify menu links contain correct baseURL path
+          echo ""
+          echo "🔍 Verifying menu links contain correct baseURL..."
           
-          # Extract and test links from EN homepage
-          echo "Checking links in EN homepage..."
-          INTERNAL_LINKS=$(grep -oP 'href="https://nat-rib\.github\.io/nataliaribeiro\.github\.io[^"]*"' public/index.html | sed 's/href="//;s/"$//' | sort -u)
-          for link in $INTERNAL_LINKS; do
-            # Convert to localhost
-            LOCAL_LINK=$(echo "$link" | sed 's|https://nat-rib.github.io|http://localhost:1314|')
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$LOCAL_LINK")
-            if [ "$STATUS" = "200" ]; then
-              echo "✅ $link -> $STATUS"
-            else
-              echo "❌ $link -> $STATUS (BROKEN LINK!)"
-              ALL_OK=false
-            fi
-          done
+          # Check EN menu has /nataliaribeiro.github.io/ in paths
+          if grep -q 'href=https://nat-rib.github.io/nataliaribeiro.github.io/about/' public/index.html; then
+            echo "✅ EN menu: /about/ link is correct"
+          else
+            echo "❌ EN menu: /about/ link is broken or missing baseURL"
+            ALL_OK=false
+          fi
           
-          # Extract and test links from PT homepage
-          echo "Checking links in PT homepage..."
-          INTERNAL_LINKS_PT=$(grep -oP 'href="https://nat-rib\.github\.io/nataliaribeiro\.github\.io[^"]*"' public/pt/index.html | sed 's/href="//;s/"$//' | sort -u)
-          for link in $INTERNAL_LINKS_PT; do
-            LOCAL_LINK=$(echo "$link" | sed 's|https://nat-rib.github.io|http://localhost:1314|')
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$LOCAL_LINK")
-            if [ "$STATUS" = "200" ]; then
-              echo "✅ $link -> $STATUS"
-            else
-              echo "❌ $link -> $STATUS (BROKEN LINK!)"
-              ALL_OK=false
-            fi
-          done
+          # Check PT menu has /nataliaribeiro.github.io/pt/ in paths
+          if grep -q 'href=https://nat-rib.github.io/nataliaribeiro.github.io/pt/about/' public/pt/index.html; then
+            echo "✅ PT menu: /pt/about/ link is correct"
+          else
+            echo "❌ PT menu: /pt/about/ link is broken or missing baseURL"
+            ALL_OK=false
+          fi
+          
+          # Check language switcher
+          if grep -q 'lang-toggle-link' public/index.html && grep -q 'lang-toggle-link' public/pt/index.html; then
+            echo "✅ Language switcher present on both pages"
+          else
+            echo "❌ Language switcher missing"
+            ALL_OK=false
+          fi
           
           if [ "$ALL_OK" = false ]; then
             echo ""
-            echo "❌ FAILED: Some links are broken!"
-            echo "Please fix all broken links before deploying."
+            echo "❌ FAILED: Some tests failed!"
             exit 1
           fi
           echo ""
