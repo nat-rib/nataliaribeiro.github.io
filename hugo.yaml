@@ -103,23 +103,23 @@ menu:
   main:
     - identifier: about
       name: About
-      url: /about/
+      url: /nataliaribeiro.github.io/about/
       weight: 10
     - identifier: experience
       name: Experience
-      url: /experience/
+      url: /nataliaribeiro.github.io/experience/
       weight: 20
     - identifier: projects
       name: Projects
-      url: /projects/
+      url: /nataliaribeiro.github.io/projects/
       weight: 30
     - identifier: blog
       name: Blog
-      url: /posts/
+      url: /nataliaribeiro.github.io/posts/
       weight: 40
     - identifier: contact
       name: Contact
-      url: /contact/
+      url: /nataliaribeiro.github.io/contact/
       weight: 50
 
 outputs:
