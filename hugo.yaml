@@ -47,7 +47,7 @@ params:
     
   label:
     text: "Natalia Ribeiro"
-    icon: "/images/avatar.jpg"
+    icon: "/nataliaribeiro.github.io/images/avatar.jpg"
     iconHeight: 35
     
   profileMode:
@@ -57,7 +57,7 @@ params:
       **Data Engineer** passionate about building scalable data solutions.
       
       6+ years in tech • Itaú Unibanco • XP Inc.
-    imageUrl: "/images/avatar.jpg"
+    imageUrl: "/nataliaribeiro.github.io/images/avatar.jpg"
     imageWidth: 140
     imageHeight: 140
     imageTitle: "Natalia Ribeiro"
