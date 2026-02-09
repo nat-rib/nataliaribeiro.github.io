@@ -40,23 +40,23 @@ languages:
       main:
         - identifier: about
           name: About
-          url: /nataliaribeiro.github.io/about/
+          url: /about/
           weight: 10
         - identifier: experience
           name: Experience
-          url: /nataliaribeiro.github.io/experience/
+          url: /experience/
           weight: 20
         - identifier: projects
           name: Projects
-          url: /nataliaribeiro.github.io/projects/
+          url: /projects/
           weight: 30
         - identifier: blog
           name: Blog
-          url: /nataliaribeiro.github.io/posts/
+          url: /posts/
           weight: 40
         - identifier: contact
           name: Contact
-          url: /nataliaribeiro.github.io/contact/
+          url: /contact/
           weight: 50
           
   pt:
@@ -81,23 +81,23 @@ languages:
       main:
         - identifier: about
           name: Sobre
-          url: /nataliaribeiro.github.io/pt/about/
+          url: /about/
           weight: 10
         - identifier: experience
           name: Experiência
-          url: /nataliaribeiro.github.io/pt/experience/
+          url: /experience/
           weight: 20
         - identifier: projects
           name: Projetos
-          url: /nataliaribeiro.github.io/pt/projects/
+          url: /projects/
           weight: 30
         - identifier: blog
           name: Blog
-          url: /nataliaribeiro.github.io/pt/posts/
+          url: /posts/
           weight: 40
         - identifier: contact
           name: Contato
-          url: /nataliaribeiro.github.io/pt/contact/
+          url: /contact/
           weight: 50
 
 params:
