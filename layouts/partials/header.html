@@ -35,15 +35,30 @@
         
         <div class="nav-right">
             <!-- Language Switcher -->
-            <div class="lang-switch" title="Change language">
-                <button id="lang-toggle" aria-label="Change language">
-                    <span id="current-lang">EN</span>
+            {{ if .IsTranslated }}
+            <div class="lang-switch" title="{{ if eq .Lang "pt" }}Mudar idioma{{ else }}Change language{{ end }}">
+                <button id="lang-toggle" aria-label="{{ if eq .Lang "pt" }}Mudar idioma{{ else }}Change language{{ end }}">
+                    <span id="current-lang">{{ .Lang | upper }}</span>
                 </button>
                 <div class="lang-dropdown" id="lang-dropdown">
-                    <a href="#" data-lang="en">English</a>
-                    <a href="#" data-lang="pt">Português</a>
+                    {{ range .Translations }}
+                    <a href="{{ .Permalink }}" data-lang="{{ .Lang }}">
+                        {{ .Language.LanguageName }}
+                    </a>
+                    {{ end }}
+                    <a href="{{ .Permalink }}" data-lang="{{ .Lang }}" class="active">
+                        {{ .Language.LanguageName }}
+                    </a>
                 </div>
             </div>
+            {{ else }}
+            <div class="lang-switch">
+                <a href="{{ if eq .Lang "pt" }}/nataliaribeiro.github.io/{{ else }}/nataliaribeiro.github.io/pt/{{ end }}" 
+                   class="lang-link" title="{{ if eq .Lang "pt" }}English{{ else }}Português{{ end }}">
+                    {{ if eq .Lang "pt" }}EN{{ else }}PT{{ end }}
+                </a>
+            </div>
+            {{ end }}
             
             {{- if (not site.Params.disableThemeToggle) }}
             <button id="theme-toggle" accesskey="t" title="Toggle theme" aria-label="Toggle theme">

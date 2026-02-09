@@ -143,6 +143,21 @@
   font-weight: 600;
 }
 
+.lang-link {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.lang-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ===================================
    HAMBURGER MENU (L1Cafe Style)
    =================================== */

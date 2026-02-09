@@ -1,14 +1,15 @@
 baseURL: "https://nat-rib.github.io/nataliaribeiro.github.io/"
-languageCode: "pt-br"
 title: "Natalia Ribeiro"
 theme: "PaperMod"
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-# Important for GitHub Pages subpath
 canonifyURLs: true
 relativeURLs: false
 
@@ -16,10 +17,92 @@ minify:
   disableXML: true
   minifyOutput: true
 
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    params:
+      description: "Software Engineer | AI-Augmented Development | Financial Systems"
+      profileMode:
+        enabled: true
+        title: "Natalia Ribeiro"
+        subtitle: |
+          Software engineer specializing in **AI-augmented development** and **financial systems**.
+          
+          I use AI agents as a senior developer's secret weapon—writing boilerplate, reviewing PRs, and catching issues before they hit production.
+          
+          9+ years shipping high-stakes backend systems in banking. Now focused on making AI agents actually useful for coding.
+        imageUrl: "/nataliaribeiro.github.io/images/avatar.jpg"
+        imageWidth: 140
+        imageHeight: 140
+        imageTitle: "Natalia Ribeiro"
+    menu:
+      main:
+        - identifier: about
+          name: About
+          url: /nataliaribeiro.github.io/about/
+          weight: 10
+        - identifier: experience
+          name: Experience
+          url: /nataliaribeiro.github.io/experience/
+          weight: 20
+        - identifier: projects
+          name: Projects
+          url: /nataliaribeiro.github.io/projects/
+          weight: 30
+        - identifier: blog
+          name: Blog
+          url: /nataliaribeiro.github.io/posts/
+          weight: 40
+        - identifier: contact
+          name: Contact
+          url: /nataliaribeiro.github.io/contact/
+          weight: 50
+          
+  pt:
+    languageName: "Português"
+    weight: 2
+    params:
+      description: "Engenheira de Software | Desenvolvimento com IA | Sistemas Financeiros"
+      profileMode:
+        enabled: true
+        title: "Natalia Ribeiro"
+        subtitle: |
+          Engenheira de software especializada em **desenvolvimento com IA** e **sistemas financeiros**.
+          
+          Uso agentes de IA como arma secreta de dev senior—escrevendo boilerplate, revisando PRs e identificando problemas antes de chegarem em produção.
+          
+          9+ anos desenvolvendo sistemas críticos em bancos. Agora focada em tornar agentes de IA realmente úteis para programar.
+        imageUrl: "/nataliaribeiro.github.io/images/avatar.jpg"
+        imageWidth: 140
+        imageHeight: 140
+        imageTitle: "Natalia Ribeiro"
+    menu:
+      main:
+        - identifier: about
+          name: Sobre
+          url: /nataliaribeiro.github.io/pt/about/
+          weight: 10
+        - identifier: experience
+          name: Experiência
+          url: /nataliaribeiro.github.io/pt/experience/
+          weight: 20
+        - identifier: projects
+          name: Projetos
+          url: /nataliaribeiro.github.io/pt/projects/
+          weight: 30
+        - identifier: blog
+          name: Blog
+          url: /nataliaribeiro.github.io/pt/posts/
+          weight: 40
+        - identifier: contact
+          name: Contato
+          url: /nataliaribeiro.github.io/pt/contact/
+          weight: 50
+
 params:
   env: production
   title: "Natalia Ribeiro"
-  description: "Software Engineer | AI-Augmented Development | Financial Systems"
   keywords: [Software Engineer, AI Agents, Python, AWS, Portfolio, Natalia Ribeiro, LLM, Financial Systems]
   author: "Natalia Ribeiro"
   
@@ -49,20 +132,6 @@ params:
     text: "Natalia Ribeiro"
     icon: "/nataliaribeiro.github.io/images/avatar.jpg"
     iconHeight: 35
-    
-  profileMode:
-    enabled: true
-    title: "Natalia Ribeiro"
-    subtitle: |
-      Software engineer specializing in **AI-augmented development** and **financial systems**.
-      
-      I use AI agents as a senior developer's secret weapon—writing boilerplate, reviewing PRs, and catching issues before they hit production.
-      
-      9+ years shipping high-stakes backend systems in banking. Now focused on making AI agents actually useful for coding.
-    imageUrl: "/nataliaribeiro.github.io/images/avatar.jpg"
-    imageWidth: 140
-    imageHeight: 140
-    imageTitle: "Natalia Ribeiro"
 
   socialIcons:
     - name: linkedin
@@ -87,29 +156,6 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
-
-menu:
-  main:
-    - identifier: about
-      name: About
-      url: /nataliaribeiro.github.io/about/
-      weight: 10
-    - identifier: experience
-      name: Experience
-      url: /nataliaribeiro.github.io/experience/
-      weight: 20
-    - identifier: projects
-      name: Projects
-      url: /nataliaribeiro.github.io/projects/
-      weight: 30
-    - identifier: blog
-      name: Blog
-      url: /nataliaribeiro.github.io/posts/
-      weight: 40
-    - identifier: contact
-      name: Contact
-      url: /nataliaribeiro.github.io/contact/
-      weight: 50
 
 outputs:
   home:
