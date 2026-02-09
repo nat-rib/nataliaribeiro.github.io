@@ -34,6 +34,17 @@
         </div>
         
         <div class="nav-right">
+            <!-- Language Switcher -->
+            <div class="lang-switch" title="Change language">
+                <button id="lang-toggle" aria-label="Change language">
+                    <span id="current-lang">EN</span>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="pt">Português</a>
+                </div>
+            </div>
+            
             {{- if (not site.Params.disableThemeToggle) }}
             <button id="theme-toggle" accesskey="t" title="Toggle theme" aria-label="Toggle theme">
                 <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"

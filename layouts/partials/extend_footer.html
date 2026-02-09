@@ -1,0 +1,51 @@
+<!-- Language Switcher JS -->
+<script>
+// Language Switcher
+(function() {
+    const langToggle = document.getElementById('lang-toggle');
+    const langDropdown = document.getElementById('lang-dropdown');
+    const currentLang = document.getElementById('current-lang');
+    
+    if (!langToggle || !langDropdown) return;
+    
+    // Get saved language or default to EN
+    let savedLang = localStorage.getItem('site-lang') || 'en';
+    currentLang.textContent = savedLang.toUpperCase();
+    
+    // Mark active language
+    document.querySelectorAll('.lang-dropdown a').forEach(a => {
+        if (a.dataset.lang === savedLang) {
+            a.classList.add('active');
+        }
+    });
+    
+    // Toggle dropdown
+    langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        langDropdown.classList.remove('show');
+    });
+    
+    // Language selection
+    document.querySelectorAll('.lang-dropdown a').forEach(a => {
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.dataset.lang;
+            localStorage.setItem('site-lang', lang);
+            currentLang.textContent = lang.toUpperCase();
+            
+            // Update active state
+            document.querySelectorAll('.lang-dropdown a').forEach(el => {
+                el.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            langDropdown.classList.remove('show');
+        });
+    });
+})();
+</script>

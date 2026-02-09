@@ -82,6 +82,67 @@
   color: var(--accent);
 }
 
+/* Language Switcher */
+.lang-switch {
+  position: relative;
+}
+
+#lang-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--primary);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-top: 0.25rem;
+  min-width: 100px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.lang-dropdown.show {
+  display: block;
+}
+
+.lang-dropdown a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--secondary);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.lang-dropdown a:hover {
+  background: var(--tertiary);
+  color: var(--accent);
+}
+
+.lang-dropdown a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ===================================
    HAMBURGER MENU (L1Cafe Style)
    =================================== */
