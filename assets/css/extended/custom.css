@@ -149,9 +149,14 @@
 
 #menu li {
   list-style: none;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   text-align: left;
+}
+
+/* Override theme's li+li margin that causes misalignment */
+#menu li+li {
+  margin-inline-start: 0 !important;
 }
 
 #menu li a {
