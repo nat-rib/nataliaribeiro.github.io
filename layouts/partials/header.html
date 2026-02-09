@@ -55,16 +55,6 @@
                 </button>
                 {{- end }}
                 
-                <!-- Hamburger Menu Button -->
-                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
-                
                 {{- if (not site.Params.disableLangToggle) }}
                     {{- $lang := .Lang}}
                     {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
@@ -90,6 +80,17 @@
                 {{- end }}
             </div>
         </div>
+        
+        <!-- Hamburger Menu Button (mobile only) -->
+        <button id="menu-btn" class="menu-btn" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line class="line1" x1="4" y1="6" x2="20" y2="6"></line>
+                <line class="line2" x1="4" y1="12" x2="20" y2="12"></line>
+                <line class="line3" x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+        
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range site.Menus.main }}
@@ -120,31 +121,23 @@
 </header>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
+(function() {
+    const menuBtn = document.getElementById('menu-btn');
     const menu = document.getElementById('menu');
     
-    if (menuToggle && menu) {
-        menuToggle.addEventListener('click', function() {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+    if (menuBtn && menu) {
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menu.classList.toggle('show');
+            menuBtn.classList.toggle('active');
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-                menu.classList.remove('active');
-                menuToggle.classList.remove('active');
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.remove('show');
+                menuBtn.classList.remove('active');
             }
         });
-        
-        // Close menu when clicking a link
-        menu.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                menu.classList.remove('active');
-                menuToggle.classList.remove('active');
-            });
-        });
     }
-});
+})();
 </script>
