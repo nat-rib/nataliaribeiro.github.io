@@ -1,11 +1,11 @@
 /* ===================================
    Natalia Ribeiro Portfolio
-   Mobile Hamburger Menu (SVG icon)
+   L1Cafe-inspired Menu Style
    =================================== */
 
 :root {
   --radius: 6px;
-  --accent: #c96b5a;
+  --accent: #6b9eff;
 }
 
 [data-theme="light"] {
@@ -20,10 +20,10 @@
 [data-theme="dark"] {
   --primary: #eee;
   --secondary: #999;
-  --tertiary: #1e1e1e;
+  --tertiary: #1a1a1a;
   --border: #333;
-  --entry: #1a1a1a;
-  --theme: #0f0f0f;
+  --entry: #151515;
+  --theme: #0a0a0a;
 }
 
 /* ===================================
@@ -34,36 +34,54 @@
   position: sticky;
   top: 0;
   background: var(--theme);
-  border-bottom: 1px solid var(--border);
   z-index: 999;
 }
 
 .nav {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .logo a {
   font-weight: 600;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--primary);
 }
 
-.logo-switches {
+.logo a:hover {
+  color: var(--accent);
+}
+
+.nav-right {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-left: 0.5rem;
+  gap: 1rem;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+}
+
+#theme-toggle:hover {
+  color: var(--accent);
 }
 
 /* ===================================
-   HAMBURGER MENU
+   HAMBURGER MENU (L1Cafe Style)
    =================================== */
 
 .menu-checkbox {
@@ -71,31 +89,58 @@
 }
 
 .hamburger {
-  display: none;
-  cursor: pointer;
-  padding: 0.25rem;
-  color: var(--primary);
-}
-
-.hamburger svg {
-  display: block;
-}
-
-/* Menu - Desktop */
-#menu {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+  background-color: var(--accent);
+}
+
+/* Menu - Hidden by default */
+#menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 80vw;
+  background: var(--theme);
+  border-left: 1px solid var(--border);
+  padding: 5rem 2rem 2rem;
+  flex-direction: column;
+  gap: 0;
+  z-index: 1000;
   list-style: none;
-  gap: 0.25rem;
   margin: 0;
-  padding: 0;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+}
+
+#menu li {
+  list-style: none;
 }
 
 #menu li a {
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 1rem 0;
   color: var(--secondary);
-  font-size: 0.9rem;
-  border-radius: var(--radius);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border);
   transition: color 0.2s;
 }
 
@@ -104,39 +149,38 @@
   color: var(--accent);
 }
 
-/* ===================================
-   MOBILE (< 640px)
-   =================================== */
+#menu li:last-child a {
+  border-bottom: none;
+}
 
-@media (max-width: 640px) {
-  .hamburger {
-    display: block;
-    order: 3;
-  }
-  
-  #menu {
-    display: none;
-    order: 4;
-    width: 100%;
-    flex-direction: column;
-    padding: 0.75rem 0 0;
-    margin-top: 0.75rem;
-    border-top: 1px solid var(--border);
-  }
-  
-  #menu li {
-    list-style: none;
-  }
-  
-  #menu li a {
-    padding: 0.75rem 0;
-    font-size: 1rem;
-    display: block;
-  }
-  
-  .menu-checkbox:checked ~ #menu {
-    display: flex;
-  }
+/* Menu Open State */
+.menu-checkbox:checked ~ #menu {
+  display: flex;
+}
+
+/* Hamburger X animation when open */
+.menu-checkbox:checked ~ .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-checkbox:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-checkbox:checked ~ .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay when menu is open */
+.menu-checkbox:checked::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
 }
 
 /* ===================================
@@ -144,7 +188,7 @@
    =================================== */
 
 .profile {
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
 }
 
 .profile .profile_inner h1 {
@@ -167,15 +211,16 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .profile .button {
-  padding: 0.6rem 1.1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: var(--radius);
   font-size: 0.85rem;
   border: 1px solid var(--border);
   background: var(--entry);
+  transition: all 0.2s;
 }
 
 .profile .button:hover {
@@ -201,11 +246,19 @@
 .post-single {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .post-title {
   font-size: 1.5rem;
+}
+
+.post-content a {
+  color: var(--accent);
+}
+
+.post-content a:hover {
+  text-decoration: underline;
 }
 
 /* ===================================
@@ -235,6 +288,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 0.6rem 0.8rem;
+  transition: border-color 0.2s;
 }
 
 .post-content tr:hover {
@@ -273,7 +327,7 @@
    =================================== */
 
 .post-content h2 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   font-size: 1.25rem;
 }
 
@@ -322,6 +376,10 @@
   border-color: var(--accent);
 }
 
+.social-icons a {
+  color: var(--secondary);
+}
+
 .social-icons a:hover {
   color: var(--accent);
 }
@@ -329,4 +387,5 @@
 .footer {
   font-size: 0.8rem;
   color: var(--secondary);
+  padding: 2rem 1.5rem;
 }
