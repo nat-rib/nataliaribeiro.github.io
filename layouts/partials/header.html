@@ -35,7 +35,7 @@
         
         <div class="nav-right">
             <!-- Language Switcher (direct link, no dropdown) -->
-            <a href="{{ if eq .Lang "pt" }}{{ "/" | absLangURL }}{{ else }}{{ "/pt/" | absURL }}{{ end }}" 
+            <a href="{{ if eq .Lang "pt" }}{{ site.BaseURL }}{{ else }}{{ site.BaseURL }}pt/{{ end }}" 
                class="lang-toggle-link" 
                title="{{ if eq .Lang "pt" }}English{{ else }}Português{{ end }}">
                 {{ if eq .Lang "pt" }}EN{{ else }}PT{{ end }}
@@ -70,13 +70,14 @@
             </label>
             
             {{- $currentPage := . }}
+            {{- $langPrefix := cond (eq .Lang "pt") "pt/" "" }}
             <ul id="menu">
                 {{- range site.Menus.main }}
-                {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-                {{- $page_url:= $currentPage.Permalink | absLangURL }}
+                {{- $menuUrl := printf "%s%s%s" site.BaseURL $langPrefix (strings.TrimPrefix "/" .URL) }}
+                {{- $page_url := $currentPage.Permalink }}
                 <li>
-                    <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
-                        <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                    <a href="{{ $menuUrl }}" title="{{ .Title | default .Name }}">
+                        <span {{- if eq $menuUrl $page_url }} class="active" {{- end }}>
                             {{- .Name -}}
                         </span>
                     </a>
