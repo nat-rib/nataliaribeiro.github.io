@@ -34,8 +34,16 @@
         </div>
         
         <div class="nav-right">
-            <!-- Language Switcher (direct link, no dropdown) -->
-            <a href="{{ if eq .Lang "pt" }}{{ site.BaseURL }}{{ else }}{{ site.BaseURL }}pt/{{ end }}" 
+            <!-- Language Switcher (links to translated version of current page, or home if no translation) -->
+            {{- $targetUrl := "" }}
+            {{- if .IsTranslated }}
+              {{- range .Translations }}
+                {{- $targetUrl = .Permalink }}
+              {{- end }}
+            {{- else }}
+              {{- $targetUrl = cond (eq $.Lang "pt") (printf "%s" site.BaseURL) (printf "%spt/" site.BaseURL) }}
+            {{- end }}
+            <a href="{{ $targetUrl }}" 
                class="lang-toggle-link" 
                title="{{ if eq .Lang "pt" }}English{{ else }}Português{{ end }}">
                 {{ if eq .Lang "pt" }}EN{{ else }}PT{{ end }}
