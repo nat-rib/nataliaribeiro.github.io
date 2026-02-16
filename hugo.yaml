@@ -22,12 +22,12 @@ languages:
     languageName: "English"
     weight: 1
     params:
-      description: "Software Engineer | AI-Augmented Development | Financial Systems"
+      description: "Software Engineer | Agentic Engineering & AI-Augmented Development | Financial Systems"
       profileMode:
         enabled: true
         title: "Natalia Ribeiro"
         subtitle: |
-          Software engineer specializing in **AI-augmented development** and **financial systems**.
+          Software engineer specializing in **agentic engineering** and **AI-augmented development** and **financial systems**.
           
           I use AI agents as a senior developer's secret weapon—writing boilerplate, reviewing PRs, and catching issues before they hit production.
           

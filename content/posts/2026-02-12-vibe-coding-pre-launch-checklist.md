@@ -217,4 +217,4 @@ If you're not a dev: respect the gap. A live app with real user data is real res
 
 ---
 
-*This article is part of my series on AI-augmented development. Want to catch the next ones? Follow me on [GitHub](https://github.com/nat-rib) or check the [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*
+*This article is part of my series on agentic engineering. Want to catch the next ones? Follow me on [GitHub](https://github.com/nat-rib) or check the [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*

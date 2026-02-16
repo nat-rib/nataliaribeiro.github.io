@@ -217,4 +217,4 @@ And at the end of the day, that's what matters: systems that actually work, solv
 
 ---
 
-*This article is part of my series on AI-augmented development. To catch the next ones, follow me on [GitHub](https://github.com/nat-rib) or check the [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*
+*This article is part of my series on agentic engineering. To catch the next ones, follow me on [GitHub](https://github.com/nat-rib) or check the [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*

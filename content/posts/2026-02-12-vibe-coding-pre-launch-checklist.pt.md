@@ -217,4 +217,4 @@ Se você não é dev: respeite o gap. Um app no ar com dados de usuários reais 
 
 ---
 
-*Esse artigo faz parte da minha série sobre AI-augmented development. Se você quer receber os próximos, me segue no [GitHub](https://github.com/nat-rib) ou acompanha o [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*
+*Esse artigo faz parte da minha série sobre agentic engineering. Se você quer receber os próximos, me segue no [GitHub](https://github.com/nat-rib) ou acompanha o [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*

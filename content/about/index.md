@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Software engineer specializing in AI-augmented development and financial systems"
+description: "Software engineer specializing in agentic engineering, AI-augmented development, and financial systems"
 date: 2024-01-01
 draft: false
 hidemeta: true
@@ -8,7 +8,7 @@ ShowToc: false
 showBreadCrumbs: false
 ---
 
-Software engineer specializing in **AI-augmented development** and **financial systems**.
+Software engineer specializing in **agentic engineering**, **AI-augmented development**, and **financial systems**.
 
 I spent 9 years building backend services for Brazil's banking sector—systems where bugs cost real money and downtime isn't an option. That taught me to think in edge cases and design for failure.
 

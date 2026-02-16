@@ -217,4 +217,4 @@ E no fim do dia, é isso que importa: sistemas que funcionam de verdade, resolve
 
 ---
 
-*Esse artigo faz parte da minha série sobre AI-augmented development. Se você quer receber os próximos, me segue no [GitHub](https://github.com/nat-rib) ou acompanha o [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*
+*Esse artigo faz parte da minha série sobre agentic engineering. Se você quer receber os próximos, me segue no [GitHub](https://github.com/nat-rib) ou acompanha o [blog](https://nat-rib.github.io/nataliaribeiro.github.io/).*
