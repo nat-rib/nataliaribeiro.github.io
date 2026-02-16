@@ -148,17 +148,33 @@ Cada uma é um arquivo markdown com instruções detalhadas. O agent carrega só
 - Quando o agent precisa de instruções detalhadas mas você não quer poluir o contexto base
 - Padronização de processos entre múltiplos agents ou sessões
 
-## Tabela comparativa
+## Comparação rápida
 
-| Aspecto | RAG | MCP | AI Agents | Skills |
-|---------|-----|-----|-----------|--------|
-| **Problema que resolve** | "O que o modelo sabe" | "Como usa ferramentas" | "Quem decide e age" | "Como executa tarefas" |
-| **Tipo de dado** | Estático, documentos | Dinâmico, APIs/serviços | Tudo (orquestra) | Instruções procedurais |
-| **Quando atua** | Na construção do prompt | Em runtime, sob demanda | Loop contínuo | Carregamento sob demanda |
-| **Resultado** | Respostas melhores | Ações no mundo real | Tarefas completas | Execução padronizada |
-| **Compete com os outros?** | Não | Não | Não | Não |
+### 🔍 RAG
+- **Resolve:** "O que o modelo sabe"
+- **Dados:** Estáticos, documentos
+- **Quando atua:** Na construção do prompt
+- **Resultado:** Respostas melhores
 
-A linha mais importante da tabela é a última: **nenhum deles compete com o outro**. São camadas complementares de um mesmo stack.
+### 🔌 MCP
+- **Resolve:** "Como usa ferramentas"
+- **Dados:** Dinâmicos, APIs/serviços
+- **Quando atua:** Em runtime, sob demanda
+- **Resultado:** Ações no mundo real
+
+### 🤖 AI Agents
+- **Resolve:** "Quem decide e age"
+- **Dados:** Tudo (orquestra os outros)
+- **Quando atua:** Loop contínuo de raciocínio
+- **Resultado:** Tarefas completas
+
+### 📋 Skills
+- **Resolve:** "Como executa tarefas"
+- **Dados:** Instruções procedurais
+- **Quando atua:** Carregamento sob demanda
+- **Resultado:** Execução padronizada
+
+O ponto mais importante: **nenhum deles compete com o outro**. São camadas complementares de um mesmo stack.
 
 ## Como funcionam juntos — um cenário real
 

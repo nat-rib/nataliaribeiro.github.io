@@ -148,17 +148,33 @@ Each one is a markdown file with detailed instructions. The agent loads only wha
 - When the agent needs detailed instructions but you don't want to pollute the base context
 - Process standardization across multiple agents or sessions
 
-## Comparison Table
+## Quick Comparison
 
-| Aspect | RAG | MCP | AI Agents | Skills |
-|--------|-----|-----|-----------|--------|
-| **Problem solved** | "What the model knows" | "How it uses tools" | "Who decides and acts" | "How it executes tasks" |
-| **Data type** | Static, documents | Dynamic, APIs/services | Everything (orchestrates) | Procedural instructions |
-| **When it acts** | At prompt construction | At runtime, on demand | Continuous loop | Loaded on demand |
-| **Output** | Better answers | Real-world actions | Complete tasks | Standardized execution |
-| **Competes with others?** | No | No | No | No |
+### 🔍 RAG
+- **Solves:** "What the model knows"
+- **Data:** Static, documents
+- **When it acts:** At prompt construction
+- **Output:** Better answers
 
-The most important row is the last one: **none of them compete with each other**. They're complementary layers of the same stack.
+### 🔌 MCP
+- **Solves:** "How it uses tools"
+- **Data:** Dynamic, APIs/services
+- **When it acts:** At runtime, on demand
+- **Output:** Real-world actions
+
+### 🤖 AI Agents
+- **Solves:** "Who decides and acts"
+- **Data:** Everything (orchestrates the others)
+- **When it acts:** Continuous reasoning loop
+- **Output:** Complete tasks
+
+### 📋 Skills
+- **Solves:** "How it executes tasks"
+- **Data:** Procedural instructions
+- **When it acts:** Loaded on demand
+- **Output:** Standardized execution
+
+The key point: **none of them compete with each other**. They're complementary layers of the same stack.
 
 ## How They Work Together — A Real Scenario
 
