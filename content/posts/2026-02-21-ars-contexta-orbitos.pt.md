@@ -27,8 +27,6 @@ O problema não é a ferramenta. É que ela não tem memória — ou melhor, nã
 
 Há duas semanas resolvi resolver isso. Encontrei dois sistemas open source que funcionam juntos: um pra guardar e recuperar contexto, outro pra orquestrar workflows. Não são ferramentas prontas pra usar. São estruturas que adaptei pro meu fluxo. Funcionam tão bem que agora não consigo mais trabalhar sem eles.
 
-## O problema real
-
 Quando você abre uma sessão com Claude Code ou OpenCode, o modelo sabe programar. Ele sabe Python, JavaScript, arquitetura de software, padrões de design. O que ele não sabe é:
 
 - Que você prefere usar `async/await` ao invés de promises encadeadas
@@ -237,7 +235,7 @@ Depois de implementar esses dois sistemas, minha produtividade mudou significati
 
 **Não perco contexto entre sessões.** Abro o terminal, o AI CLI já sabe onde paramos, o que foi decidido, o que falta fazer.
 
-**Não repeto setup.** Novo projeto? Copio a estrutura de arquivos, adapto, pronto. Não começo do zero.
+**Não repito setup.** Novo projeto? Copio a estrutura de arquivos, adapto, pronto. Não começo do zero.
 
 **Workflows são reproduzíveis.** Se funciona uma vez, funciona sempre. Consistência que não existia antes.
 
