@@ -205,7 +205,7 @@ Crie `skills/complete-feature.md`:
 ```markdown
 # Skill: Complete Feature
 
-## Steps
+## Passos
 1. Rode todos os testes: `pytest tests/ -v`
 2. Rode linter: `ruff check .`
 3. Rode type-check: `mypy src/`
@@ -225,7 +225,7 @@ Crie `skills/complete-feature.md`:
 
 **Erro 2:** Não testar a skill. Sempre teste uma nova skill numa tarefa pequena antes de usar pra algo importante.
 
-**Erro 3:** Esquecer de atualizar. Skills ficam desatualizadas. Reveja uma vez por mês.
+**Erro 3:** Esquecer de atualizar. As skills ficam desatualizadas. Reveja uma vez por mês.
 
 **Erro 4:** Não ter fallback. Se o AI CLI estiver offline, você ainda precisa saber fazer a tarefa manualmente.
 
@@ -259,8 +259,6 @@ O segredo é começar pequeno e iterar. ARS Contexta e OrbitOS não são framewo
 ---
 
 **Resumo em uma frase:** Memória persistente + workflows automatizados = AI que realmente trabalha com você.
-
----
 
 ---
 
