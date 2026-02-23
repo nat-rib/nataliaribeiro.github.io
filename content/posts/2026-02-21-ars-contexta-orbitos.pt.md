@@ -25,7 +25,7 @@ Todo mundo que usa AI CLI tools como Claude Code ou OpenCode passa pelo mesmo pr
 
 O problema não é a ferramenta. É que ela não tem memória — ou melhor, não tem uma memória *organizada*.
 
-Há duas semanas resolvi resolver isso. Encontrei dois sistemas open source que funcionam juntos: um pra guardar e recuperar contexto, outro pra orquestrar workflows. Não são ferramentas prontas pra usar. São estruturas que adaptei pro meu fluxo. Funcionam tão bem que agora não consigo mais trabalhar sem eles.
+Há duas semanas decidi resolver isso. Encontrei dois sistemas open source que funcionam juntos: um pra guardar e recuperar contexto, outro pra orquestrar workflows. Não são ferramentas prontas pra usar. São estruturas que adaptei pro meu fluxo. Funcionam tão bem que agora não consigo mais trabalhar sem eles.
 
 Quando você abre uma sessão com Claude Code ou OpenCode, o modelo sabe programar. Ele sabe Python, JavaScript, arquitetura de software, padrões de design. O que ele não sabe é:
 
