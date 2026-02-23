@@ -41,59 +41,47 @@ E tem o segundo problema: tarefas repetitivas. Sempre que termino uma feature, f
 
 ## ARS Contexta — A memória que persiste
 
-[ARS Contexta](https://github.com/agenticnotetaking/arscontexta) (Auto-Retrieval de Contexto Semântico) é o sistema que resolve o primeiro problema. É uma estrutura de arquivos e convenções que mantém o contexto do projeto acessível pro AI CLI.
+[ARS Contexta](https://github.com/agenticnotetaking/arscontexta) é um plugin do Claude Code que gera um "segundo cérebro" organizado em markdown — persistindo contexto entre sessões.
 
-O projeto original foi criado pela comunidade de agentic note-taking como uma forma de transformar conversas em "cofres de conhecimento" organizados. A ideia vem das artes antigas — Ars Combinatoria, Ars Memoria — sistemas externos de pensamento que amplificam a mente humana.
+Ao invés de começar do zero toda vez, o plugin estrutura seu conhecimento em três espaços:
 
-Funciona assim:
+**self/** — sua identidade, metodologia, valores de código. Quem você é como dev.
 
-**DOCUMENTOS de referência** — arquivos que descrevem o que o projeto é, como é estruturado, quais são as decisões arquiteturais. Coisas que não mudam muito, mas que o AI precisa saber pra não sugerir besteira.
+**notes/** — o grafo de conhecimento do projeto. Decisões, arquitetura, aprendizados.
 
-**MEMÓRIA de sessão** — logs do que foi feito em cada interação. Não é só "o que foi feito", mas *por que* foi feito daquela forma. Decisões, erros encontrados, soluções descartadas.
+**ops/** — coordenação operacional. Queue de tarefas, estado de sessões.
 
-**CONHECIMENTO acumulado** — aprendizados que vão além do projeto específico. Padrões que funcionam, anti-patterns que sempre dão problema, preferências pessoais de estilo.
+O diferencial é o pipeline dos **6 Rs**: Record → Reduce → Reflect → Reweave → Verify → Rethink. Comandos como `/reduce` extraem insights, `/reflect` encontra conexões, `/verify` valida qualidade. Cada fase roda em subagent separado, mantendo contexto fresco.
 
-Na prática, quando inicio uma sessão, o AI CLI lê esses arquivos antes de começar. Ele sabe quem eu sou, como trabalho, qual é o projeto, o que já foi decidido. Não preciso repetir.
+Na prática: quando inicio uma sessão, meu agent já sabe quem eu sou, como trabalho, e o que decidimos antes.
 
 ### Como adaptei pro meu fluxo
 
-Organizei minha pasta de projeto com alguns arquivos específicos:
-
-- **SOUL.md** — quem eu sou como desenvolvedora, minha abordagem, valores de código
-- **USER.md** — informações sobre o contexto do usuário/produto que estou construindo
-- **MEMORY.md** — memória de longo prazo, decisões arquiteturais importantes
-- **Arquivos diários** — `2026-02-16.md` com o que foi feito hoje, decisões, erros
-- **TOOLS.md** — notas sobre ferramentas específicas que uso (bancos, APIs, libs)
-
-A mágica não é ter os arquivos. É ter uma convenção que o AI CLI consegue seguir. Quando peço "leia a memória de ontem antes de começar", ele sabe exatamente qual arquivo buscar.
+No meu setup, adaptei o conceito do ARS: mantenho `SOUL.md` (minha identidade como dev), `MEMORY.md` (decisões arquiteturais), arquivos diários de sessão, e `TOOLS.md` (stack específico). Uso comandos como `/reduce` pra extrair insights e `/verify` pra validar qualidade antes de commitar.
 
 ## OrbitOS — O orquestrador de workflows
 
-[OrbitOS](https://github.com/MarsWang42/OrbitOS) é o sistema que resolve o problema de *execução*. É um sistema de workflows e automação que orquestra tarefas repetitivas.
+[OrbitOS](https://github.com/MarsWang42/OrbitOS) é um vault do Obsidian integrado com AI CLI pra orquestrar produtividade pessoal — conectando gerenciamento de conhecimento com planejamento diário.
 
-O projeto original é descrito como um "sistema de produtividade pessoal powered by AI", onde gerenciamento de conhecimento e planejamento de tarefas são orquestrados pelo seu assistente de AI.
+A estrutura é organizada em pastas numeradas:
 
-A ideia central: tarefas que faço frequentemente devem ser reproduzíveis sem que eu precise lembrar cada passo.
+**00_Inbox/** — captura rápida de ideias (a AI processa depois)
 
-Funciona em três camadas:
+**10_Daily/** — logs diários gerados pela AI com recomendações
 
-**WORKFLOWS automatizados** — sequências de passos que rodam sozinhas. Deploy, testes, builds, releases.
+**20_Project/** — projetos ativos no formato C.A.P. (Context, Actions, Progress)
 
-**SKILLS reutilizáveis** — playbooks pra tarefas comuns. "Como escrever um artigo técnico", "como revisar código", "como investigar um bug em produção". Cada skill é um conjunto de instruções detalhadas que o AI CLI segue.
+**30_Research/** — notas de pesquisa estruturadas pela AI
 
-**INTEGRAÇÕES** — conexão com ferramentas externas. Git, Docker, APIs de terceiros, notificações.
+**40_Wiki/** — conceitos atômicos com wikilinks
+
+O workflow é comandado por slash commands: `/start-my-day` planeja o dia, `/kickoff` transforma ideias em projetos, `/research` faz deep dives organizados, `/archive` limpa o que foi concluído.
+
+A mágica está nos wikilinks: projetos linkam com research, daily notes linkam com projetos, criando um grafo de conhecimento conectado.
 
 ### Como adaptei pro meu fluxo
 
-Criei "skills" pra tarefas que faço repetidamente:
-
-- **Skill de escrita** — estrutura de artigos, tom de voz, checklist de qualidade
-- **Skill de revisão** — o que verificar em code review, padrões do projeto
-- **Skill de deploy** — passos de deploy, verificações de segurança, rollback
-
-Cada skill é um arquivo markdown com instruções detalhadas. Quando preciso executar aquela tarefa, carrego a skill pro contexto e o AI CLI segue o playbook.
-
-Também automatizei workflows de infraestrutura. Tenho jobs que rodam em horários específicos, verificam se serviços estão funcionando, enviam alertas se algo quebra. Se o workflow principal falha, tenho fallbacks que garantem que a tarefa ainda será feita.
+Adaptei o conceito do OrbitOS criando skills em markdown pra tarefas repetidas: escrita de código, revisão, deploy. Cada skill tem instruções detalhadas que carrego no contexto quando preciso. Workflows rodam via comandos slash, com fallbacks quando algo falha.
 
 ## Os dois trabalhando juntos
 
@@ -219,15 +207,12 @@ Crie `skills/complete-feature.md`:
 
 **Dica crucial:** Não tente criar todas as skills de uma vez. Uma skill que você usa todo dia vale mais que dez skills que você nunca usa.
 
-### Erros que cometi (e você pode evitar)
+### Erros a evitar
 
-**Erro 1:** Criar skills muito complexas. Comece com 5-7 passos, não 50.
-
-**Erro 2:** Não testar a skill. Sempre teste uma nova skill numa tarefa pequena antes de usar pra algo importante.
-
-**Erro 3:** Esquecer de atualizar. As skills ficam desatualizadas. Reveja uma vez por mês.
-
-**Erro 4:** Não ter fallback. Se o AI CLI estiver offline, você ainda precisa saber fazer a tarefa manualmente.
+- Skills muito complexas (comece com 5-7 passos, não 50)
+- Não testar antes de usar em produção
+- Esquecer de atualizar (reveja mensalmente)
+- Não ter fallback manual se a AI estiver offline
 
 ## Benefícios práticos
 
