@@ -31,11 +31,32 @@ Context engineering is the practice of **designing the informational environment
 
 In Claude Code, this translates to three mechanisms:
 
-| Mechanism | What it does | When it acts |
-|-----------|-------------|--------------|
-| **CLAUDE.md** | Defines identity, rules, and conventions | Always (loaded automatically) |
-| **Hooks** | Injects context and validates output automatically | On specific events (start, write, end) |
-| **Slash Commands** | Reusable on-demand workflows | When you invoke them |
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>What it does</th>
+<th>When it acts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CLAUDE.md</strong></td>
+<td>Defines identity, rules, and conventions</td>
+<td>Always (loaded automatically)</td>
+</tr>
+<tr>
+<td><strong>Hooks</strong></td>
+<td>Injects context and validates output automatically</td>
+<td>On specific events (start, write, end)</td>
+</tr>
+<tr>
+<td><strong>Slash Commands</strong></td>
+<td>Reusable on-demand workflows</td>
+<td>When you invoke them</td>
+</tr>
+</tbody>
+</table>
 
 Together, they transform Claude Code from a generic assistant into a **personalized agent** that knows your project, your style, and your rules.
 
@@ -351,13 +372,42 @@ Result: note integrated into the system, connected, validated. No manual interve
 
 ### The difference in numbers
 
-| Metric | Without context eng. | With context eng. |
-|--------|---------------------|-------------------|
-| Setup per session | 3-5 min | 0 (automatic) |
-| Notes with correct schema | ~70% | ~99% |
-| Manual rework | Frequent | Rare |
-| Cross-session continuity | Non-existent | Automatic |
-| Reproducible workflows | 0 | 8 active commands |
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Without context eng.</th>
+<th>With context eng.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup per session</td>
+<td>3-5 min</td>
+<td>0 (automatic)</td>
+</tr>
+<tr>
+<td>Notes with correct schema</td>
+<td>~70%</td>
+<td>~99%</td>
+</tr>
+<tr>
+<td>Manual rework</td>
+<td>Frequent</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td>Cross-session continuity</td>
+<td>Non-existent</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td>Reproducible workflows</td>
+<td>0</td>
+<td>8 active commands</td>
+</tr>
+</tbody>
+</table>
 
 ## How to Get Started
 
