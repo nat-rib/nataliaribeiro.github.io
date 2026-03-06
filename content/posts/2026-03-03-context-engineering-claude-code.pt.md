@@ -31,32 +31,11 @@ Context engineering é a prática de **projetar o ambiente informacional** em to
 
 No Claude Code, isso se traduz em três mecanismos:
 
-<table>
-<thead>
-<tr>
-<th>Mecanismo</th>
-<th>O que faz</th>
-<th>Quando age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CLAUDE.md</strong></td>
-<td>Define identidade, regras e convenções</td>
-<td>Sempre (carregado automaticamente)</td>
-</tr>
-<tr>
-<td><strong>Hooks</strong></td>
-<td>Injeta contexto e valida output automaticamente</td>
-<td>Em eventos específicos (início, escrita, fim)</td>
-</tr>
-<tr>
-<td><strong>Slash Commands</strong></td>
-<td>Workflows reutilizáveis sob demanda</td>
-<td>Quando você invoca</td>
-</tr>
-</tbody>
-</table>
+| Mecanismo | O que faz | Quando age |
+|-----------|-----------|------------|
+| **CLAUDE.md** | Define identidade, regras e convenções | Sempre (carregado automaticamente) |
+| **Hooks** | Injeta contexto e valida output automaticamente | Em eventos específicos (início, escrita, fim) |
+| **Slash Commands** | Workflows reutilizáveis sob demanda | Quando você invoca |
 
 Juntos, eles transformam o Claude Code de um assistente genérico em um **agente personalizado** que conhece seu projeto, seu estilo e suas regras.
 
@@ -372,42 +351,13 @@ Resultado: nota integrada ao sistema, conectada, validada. Sem intervenção man
 
 ### A diferença em números
 
-<table>
-<thead>
-<tr>
-<th>Métrica</th>
-<th>Sem context eng.</th>
-<th>Com context eng.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Setup por sessão</td>
-<td>3-5 min</td>
-<td>0 (automático)</td>
-</tr>
-<tr>
-<td>Notas com schema correto</td>
-<td>~70%</td>
-<td>~99%</td>
-</tr>
-<tr>
-<td>Retrabalho manual</td>
-<td>Frequente</td>
-<td>Raro</td>
-</tr>
-<tr>
-<td>Continuidade entre sessões</td>
-<td>Inexistente</td>
-<td>Automática</td>
-</tr>
-<tr>
-<td>Workflows reproduzíveis</td>
-<td>0</td>
-<td>8 comandos ativos</td>
-</tr>
-</tbody>
-</table>
+| Métrica | Sem context eng. | Com context eng. |
+|---------|-----------------|-----------------|
+| Setup por sessão | 3-5 min | 0 (automático) |
+| Notas com schema correto | ~70% | ~99% |
+| Retrabalho manual | Frequente | Raro |
+| Continuidade entre sessões | Inexistente | Automática |
+| Workflows reproduzíveis | 0 | 8 comandos ativos |
 
 ## Como começar
 

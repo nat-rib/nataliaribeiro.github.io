@@ -290,52 +290,49 @@
 }
 
 /* ===================================
-   SKILLS (Tables → Cards)
+   TABLES
    =================================== */
 
 .post-content table {
   width: 100%;
-  margin: 1rem 0;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  display: block;
 }
 
-.post-content thead {
-  display: none;
+.post-content table thead {
+  display: table-header-group;
+  background: var(--tertiary);
 }
 
-.post-content tbody {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.5rem;
+.post-content table tbody {
+  display: table-row-group;
 }
 
-.post-content tr {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--entry);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.6rem 0.8rem;
-  transition: border-color 0.2s;
+.post-content table tr {
+  display: table-row;
 }
 
-.post-content tr:hover {
-  border-color: var(--accent);
+.post-content table th,
+.post-content table td {
+  display: table-cell;
 }
 
-.post-content td {
-  padding: 0;
-  border: none;
+.post-content table th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border);
 }
 
-.post-content td:first-child {
-  font-weight: 500;
-  font-size: 0.9rem;
+.post-content table td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.post-content td:last-child {
-  color: var(--secondary);
-  font-size: 0.75rem;
+.post-content table tbody tr:hover {
+  background: var(--tertiary);
 }
 
 /* ===================================
