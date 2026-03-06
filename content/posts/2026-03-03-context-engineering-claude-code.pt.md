@@ -52,11 +52,11 @@ Aqui está a estrutura do CLAUDE.md que uso no meu vault Obsidian (editado para 
 ```markdown
 # OrbitOS Vault — Claude Code CLI
 
-Vault Obsidian da **Tsunowa** gerenciado por dois agentes:
+Vault Obsidian da **Natália** gerenciado por dois agentes:
 Claude Code CLI (este) e R2-D2 (OpenClaw).
 
 ## Identidade
-- **Usuária:** Tsunowa (Natália)
+- **Usuária:** Natália
 - **Idioma:** Português brasileiro
 - **R2-D2:** Agente OpenClaw (Claude Haiku) — crons diários
 - **Claude CLI:** Este contexto — interações diretas, pipeline de conhecimento
@@ -261,6 +261,8 @@ git commit -m "Session end: $TIMESTAMP" --quiet 2>/dev/null
 Slash commands customizados são arquivos `.md` dentro de `.claude/commands/` que viram comandos `/nome-do-arquivo` no Claude Code. São a forma mais elegante de criar **workflows reutilizáveis**.
 
 ### Exemplos reais que uso diariamente
+
+Esses slash commands fazem parte do sistema OrbitOS que uso para orquestrar produtividade com AI CLI. Se quiser entender mais a fundo como ele funciona, escrevi sobre isso em [ARS Contexta + OrbitOS: Como Organizei Meu Desenvolvimento com AI CLI](/pt/posts/ars-contexta-orbitos-ai-cli/).
 
 **`/start-my-day`** — Planejamento diário. O comando lê o último plano em `10_Daily/`, verifica carry-over de tarefas, analisa projetos ativos em `20_Project/`, e gera o plano do dia.
 
